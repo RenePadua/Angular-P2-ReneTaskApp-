@@ -1,0 +1,14 @@
+<h2>Tarefas</h2>
+
+<p>Adicionar tarefas</p>
+<input #valor
+placeholder="Tarefas a digitar"
+type="text" />
+<button (click)="this.tasks.add(valor.value);valor.value = '' " style="margin-left: 20px">▼</button>
+<h3>Lista de tarefas</h3>
+
+<ul *ngFor="let item of tasks.getLista(); index as x">
+  <li>
+    {{item.tarefa}} <button (click)="this.tasks.remove(x)">x</button>
+  </li>
+</ul>
